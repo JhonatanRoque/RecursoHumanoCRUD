@@ -13,6 +13,7 @@ public class MenuPrincipal {
         Scanner opcionSeleccionada = new Scanner(System.in);
         String opcionMenu;
         //Menu a desplegar
+        ConexionCRUD conexion = new ConexionCRUD();
         System.out.println("*******************************************");
         System.out.println("|         CRUD  DE JAVA EN CONSOLA        |");
         System.out.println("| Opciones:                               |");
