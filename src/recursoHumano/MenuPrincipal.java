@@ -13,7 +13,6 @@ public class MenuPrincipal {
         Scanner opcionSeleccionada = new Scanner(System.in);
         String opcionMenu;
         //Menu a desplegar
-        ConexionCRUD conexion = new ConexionCRUD();
         System.out.println("*******************************************");
         System.out.println("|         CRUD  DE JAVA EN CONSOLA        |");
         System.out.println("| Opciones:                               |");
@@ -32,13 +31,13 @@ public class MenuPrincipal {
                 Create create = new Create();
                 break;
             case "2":
-                //Read read = new Read();
+                Read read = new Read();
                 break;
             case "3":
-                //Update update = new Update();
+                Update update = new Update();
                 break;
             case "4":
-                //Delete delete = new Delete();
+                Delete delete = new Delete();
                 break;
             case "5":
                 System.exit(0);

@@ -20,7 +20,7 @@ public class Create {
         
         String tabla = "tb_contacto";
         String camposTabla = "nom_contacto, email_contacto, tel_contacto";
-        String valoresCampos = " " + person.getNomPersona() + " , " + person.getEmailPersona() + " , " + person.getTelPersona() + ";";
+        String valoresCampos = "'" + person.getNomPersona() + "', '" + person.getEmailPersona() + "' , '" + person.getTelPersona() + "'";
         //instancia u objeto de la clase ConexionCRUD
         ConexionCRUD utilerias = new ConexionCRUD();
         //Se encian los parametros necesarios para guardar el registro al metodo guardarRegistros

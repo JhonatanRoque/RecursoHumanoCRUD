@@ -7,7 +7,7 @@ public class ConexionCRUD {
     Ruta de la base de datos del servidor 127.0.0.1, el puerto 3306 y el nombre 
     de la base de datos bd_recurso_humano
     */
-    private final String servidor = "jdbc:mysql://127.0.0.1:3306/bd_recurso_humano";
+    private final String servidor = "jdbc:mysql://127.0.0.1:33066/bd_recurso_humano"; //Cambiar el puerto 33066 por 3306, si da error, en mi paquina mysql utiliza el puerto 33066
     //Nombre del usuario (root por defecto) de la base de datos
     private final String usuario = "root";
     //Clave del usuario de la base de datos
@@ -22,7 +22,7 @@ public class ConexionCRUD {
             Class.forName(driverConector); //Levantar el driver
             //Establecer conexión
             conexion = DriverManager.getConnection(servidor, usuario, clave);
-            System.out.println("Conexión Exitosa!  ");
+            
         }catch(ClassNotFoundException | SQLException e){
             System.out.println("Conexión fallida! Error! : " + e.getMessage());
         }
@@ -38,7 +38,7 @@ public class ConexionCRUD {
         Connection cone = conectar.getConnection();
         try{
             //Definir la sentencia sql
-            String sqlQueryStmt = "INSERT INTO" + tabla + " (" + camposTabla + ") VALUES (" + valoresCampos + ";";
+            String sqlQueryStmt = "INSERT INTO " + tabla + " (" + camposTabla + ") VALUES (" + valoresCampos + ");";
             //Establecemos la comunicación entre nuestra aplicación java y la base de datos
             Statement stmt; //Envia sentencias sql a la base de datos
             stmt = cone.createStatement();
@@ -63,7 +63,8 @@ public class ConexionCRUD {
             if(valoresCamposNuevos.isEmpty()){
                 sqlQueryStmt = "DELETE FROM " + tabla + " WHERE " + condicion + ";";
             }else{
-                sqlQueryStmt = "UPDATE " + tabla + "SET " + valoresCamposNuevos + "WHERE " + condicion + ";";
+                sqlQueryStmt = "UPDATE " + tabla + " SET " + valoresCamposNuevos + " WHERE " + condicion + " ;";
+                
             }
             stmt = cone.createStatement();
             stmt.executeUpdate(sqlQueryStmt);
@@ -83,7 +84,7 @@ public class ConexionCRUD {
             Statement stmt;
             String sqlQueryStmt;
             if(condicionBuscar.equals("")){
-                sqlQueryStmt = "SELECT " + campoBuscar + " FROM " + tablaBuscar + " ;";
+                sqlQueryStmt = "SELECT * FROM " + tablaBuscar + " ;";
             }else {
                 sqlQueryStmt = "SELECT " + campoBuscar + " FROM " + tablaBuscar + " WHERE " + condicionBuscar + " ;";
             }
@@ -98,12 +99,20 @@ public class ConexionCRUD {
                     System.out.println();
                     for (int i = 1; i <= numColumnas; i++){
                         //Muestra los titulos de las columnas y %-20s\t indica la separación entre columnas
-                        System.out.printf("%-20s\t", metaData.getColumnName(i));
+                        if(i == 3){
+                            System.out.printf("%-35s\t", metaData.getColumnName(i));
+                        }else{
+                           System.out.printf("%-20s\t", metaData.getColumnName(i)); 
+                        }
                     }
                     System.out.println();
                     do{
                         for(int i = 1; i <= numColumnas; i++){
-                            System.out.printf("%-20s\t", miResultSet.getObject(i));
+                            if(i == 3){
+                                System.out.printf("%-35s\t", miResultSet.getObject(i));
+                            }else{
+                                System.out.printf("%-20s\t", miResultSet.getObject(i));
+                            }
                         }
                         System.out.println();
                     }while(miResultSet.next());
