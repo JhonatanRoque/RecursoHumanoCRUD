@@ -1,4 +1,4 @@
-package contacto;
+package estudiante;
 
 import java.sql.SQLException;
 import java.util.*;

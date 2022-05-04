@@ -1,4 +1,4 @@
-package contacto;
+package estudiante;
 
 import java.sql.*; //Libreria para las conexiones a la BD
 

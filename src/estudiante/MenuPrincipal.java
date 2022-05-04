@@ -1,4 +1,4 @@
-package contacto;
+package estudiante;
 
 import java.sql.SQLException; //Libreria para conexiones con base de datos
 import java.util.*;
