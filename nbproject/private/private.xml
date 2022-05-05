@@ -3,8 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/git/RecursoHumanoCRUD/src/recursoHumano/ConexionCRUD.java</file>
-            <file>file:/F:/git/RecursoHumanoCRUD/</file>
+            <file>file:/D:/git/RecursoHumanoCRUD/src/estudiante/MenuPrincipal.java</file>
+            <file>file:/D:/git/RecursoHumanoCRUD/src/estudiante/Read.java</file>
+            <file>file:/D:/git/RecursoHumanoCRUD/src/estudiante/Delete.java</file>
+            <file>file:/D:/git/RecursoHumanoCRUD/src/estudiante/Update.java</file>
+            <file>file:/D:/git/RecursoHumanoCRUD/src/estudiante/Create.java</file>
+            <file>file:/D:/git/RecursoHumanoCRUD/src/estudiante/ConexionCRUD.java</file>
+            <file>file:/D:/git/RecursoHumanoCRUD/src/estudiante/Persona.java</file>
         </group>
     </open-files>
 </project-private>

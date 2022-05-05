@@ -28,7 +28,7 @@ public class Update {
         System.out.println("Apellido: ");
         person.setApellido(leer.next());
         
-        System.out.println("Teléfono: ");
+        System.out.println("Edad: ");
         person.setEdad(leer.nextInt());
         
         String tabla = "tb_estudiante";
